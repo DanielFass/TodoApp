@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TodoApp.Views.TodoItemPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Name}">
+
+    <ContentPage.Content>
+        <VerticalStackLayout
+            Margin="20"
+            Spacing="10"
+            VerticalOptions="Fill">
+
+            <Label Text="Name" />
+            <Entry Text="{Binding Name}" />
+
+            <Label Text="Notes" />
+            <Entry Text="{Binding Notes}" />
+
+            <!-- Using a standard Grid structure instead of layout expansion flags -->
+            <Grid ColumnDefinitions="*, Auto" Margin="0,10">
+                <Label Grid.Column="0" Text="Done" VerticalOptions="Center" />
+                <Switch Grid.Column="1" IsToggled="{Binding Done}" VerticalOptions="Center" />
+            </Grid>
+
+            <Button Clicked="OnSaveClicked" Text="Save" />
+
+            <Button Clicked="OnDeleteClicked" Text="Delete" />
+
+            <Button Clicked="OnCancelClicked" Text="Cancel" />
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

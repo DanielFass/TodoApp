@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TodoApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:TodoApp.Views"
+    Title="TodoApp">
+
+    <!-- Point ContentTemplate to your views:TodoListPage folder instead of local:MainPage -->
+    <ShellContent
+        Title="Todo List"
+        ContentTemplate="{DataTemplate views:TodoListPage}"
+        Route="TodoListPage" />
+
+</Shell>
